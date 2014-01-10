@@ -9,10 +9,17 @@
 #import "CAXAppDelegate.h"
 
 @implementation CAXAppDelegate
+@synthesize accessibilityObserver;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    self.accessibilityObserver = [CAXAccessibilityObserver observerWithGrantedBlock:^{
+        NSLog(@"use something that requires accessibilty privileges");
+    } revokedBlock:^{
+        NSLog(@"stop doing something that requires accessibilty privileges");
+    }];
+    
+    [self.accessibilityObserver requestPrivileges];
 }
 
 @end

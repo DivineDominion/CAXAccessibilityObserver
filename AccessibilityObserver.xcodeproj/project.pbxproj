@@ -18,6 +18,7 @@
 		6037B1E4187F307D00685A7F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6037B1C3187F307D00685A7F /* Cocoa.framework */; };
 		6037B1EC187F307D00685A7F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6037B1EA187F307D00685A7F /* InfoPlist.strings */; };
 		6037B1EE187F307D00685A7F /* AccessibilityObserverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6037B1ED187F307D00685A7F /* AccessibilityObserverTests.m */; };
+		60CDF3E8187F311000D3EF18 /* CAXAccessibilityObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CDF3E7187F311000D3EF18 /* CAXAccessibilityObserver.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		6037B1E9187F307D00685A7F /* AccessibilityObserverTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AccessibilityObserverTests-Info.plist"; sourceTree = "<group>"; };
 		6037B1EB187F307D00685A7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6037B1ED187F307D00685A7F /* AccessibilityObserverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccessibilityObserverTests.m; sourceTree = "<group>"; };
+		60CDF3E6187F311000D3EF18 /* CAXAccessibilityObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXAccessibilityObserver.h; sourceTree = "<group>"; };
+		60CDF3E7187F311000D3EF18 /* CAXAccessibilityObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAXAccessibilityObserver.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 			children = (
 				6037B1D5187F307D00685A7F /* CAXAppDelegate.h */,
 				6037B1D6187F307D00685A7F /* CAXAppDelegate.m */,
+				60CDF3E6187F311000D3EF18 /* CAXAccessibilityObserver.h */,
+				60CDF3E7187F311000D3EF18 /* CAXAccessibilityObserver.m */,
 				6037B1D8187F307D00685A7F /* MainMenu.xib */,
 				6037B1DB187F307D00685A7F /* Images.xcassets */,
 				6037B1CA187F307D00685A7F /* Supporting Files */,
@@ -255,6 +260,7 @@
 			files = (
 				6037B1D0187F307D00685A7F /* main.m in Sources */,
 				6037B1D7187F307D00685A7F /* CAXAppDelegate.m in Sources */,
+				60CDF3E8187F311000D3EF18 /* CAXAccessibilityObserver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +471,7 @@
 				6037B1F3187F307D00685A7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6037B1F4187F307D00685A7F /* Build configuration list for PBXNativeTarget "AccessibilityObserverTests" */ = {
 			isa = XCConfigurationList;
@@ -473,6 +480,7 @@
 				6037B1F6187F307D00685A7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
