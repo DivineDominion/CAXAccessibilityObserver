@@ -14,6 +14,9 @@
     void (^_revokedBlock)(void);
 }
 
+@property (nonatomic, strong, readwrite) NSViewController *accessibilityViewController;
+@property (nonatomic, strong, readwrite) NSWindowController *windowController;
+
 @property (nonatomic, strong, readwrite) void (^grantedBlock)(void);
 @property (nonatomic, strong, readwrite) void (^revokedBlock)(void);
 

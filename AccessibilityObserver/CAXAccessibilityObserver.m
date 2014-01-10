@@ -7,6 +7,7 @@
 //
 
 #import "CAXAccessibilityObserver.h"
+#import "CAXAccessibilityPanelController.h"
 
 // If you set this delay to 0.0, the notification will fire but the new trust
 // value won't be accessible in my experience.  This is just heuristics and
@@ -86,9 +87,17 @@
     {
         // We're on Mavericks
         
-        NSDictionary *options = @{ (__bridge id)kAXTrustedCheckOptionPrompt: @YES };
-        
-        self.accessibilityTrusted = AXIsProcessTrustedWithOptions((__bridge CFDictionaryRef)options);
+        if (true)
+        {
+            NSDictionary *options = @{ (__bridge id)kAXTrustedCheckOptionPrompt: @YES };
+            
+            self.accessibilityTrusted = AXIsProcessTrustedWithOptions((__bridge CFDictionaryRef)options);
+        }
+        else
+        {
+            // use custom dialogue
+            self.accessibilityTrusted = AXIsProcessTrustedWithOptions(NULL);
+        }
         
         if ([self wasAccessibilityTrusted])
         {
@@ -97,6 +106,12 @@
         else
         {
             NSLog(@"untrusted");
+            
+            CAXAccessibilityPanelController *vc = [[CAXAccessibilityPanelController alloc] initWithWindowNibName:@"AccessibilityInfoWindow"];
+            
+            [[vc window] makeKeyAndOrderFront:NSApp];
+            
+            self.windowController = vc;
             // TODO display info message
         }
         

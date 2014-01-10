@@ -19,6 +19,8 @@
 		6037B1EC187F307D00685A7F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6037B1EA187F307D00685A7F /* InfoPlist.strings */; };
 		6037B1EE187F307D00685A7F /* AccessibilityObserverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6037B1ED187F307D00685A7F /* AccessibilityObserverTests.m */; };
 		60CDF3E8187F311000D3EF18 /* CAXAccessibilityObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CDF3E7187F311000D3EF18 /* CAXAccessibilityObserver.m */; };
+		60CDF3EA1880322C00D3EF18 /* AccessibilityInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60CDF3E91880322C00D3EF18 /* AccessibilityInfoWindow.xib */; };
+		60CDF3EF1880420C00D3EF18 /* CAXAccessibilityPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CDF3ED1880420C00D3EF18 /* CAXAccessibilityPanelController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		6037B1ED187F307D00685A7F /* AccessibilityObserverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccessibilityObserverTests.m; sourceTree = "<group>"; };
 		60CDF3E6187F311000D3EF18 /* CAXAccessibilityObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXAccessibilityObserver.h; sourceTree = "<group>"; };
 		60CDF3E7187F311000D3EF18 /* CAXAccessibilityObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAXAccessibilityObserver.m; sourceTree = "<group>"; };
+		60CDF3E91880322C00D3EF18 /* AccessibilityInfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccessibilityInfoWindow.xib; sourceTree = "<group>"; };
+		60CDF3EC1880420C00D3EF18 /* CAXAccessibilityPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXAccessibilityPanelController.h; sourceTree = "<group>"; };
+		60CDF3ED1880420C00D3EF18 /* CAXAccessibilityPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAXAccessibilityPanelController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +127,9 @@
 				6037B1D6187F307D00685A7F /* CAXAppDelegate.m */,
 				60CDF3E6187F311000D3EF18 /* CAXAccessibilityObserver.h */,
 				60CDF3E7187F311000D3EF18 /* CAXAccessibilityObserver.m */,
+				60CDF3EC1880420C00D3EF18 /* CAXAccessibilityPanelController.h */,
+				60CDF3ED1880420C00D3EF18 /* CAXAccessibilityPanelController.m */,
+				60CDF3E91880322C00D3EF18 /* AccessibilityInfoWindow.xib */,
 				6037B1D8187F307D00685A7F /* MainMenu.xib */,
 				6037B1DB187F307D00685A7F /* Images.xcassets */,
 				6037B1CA187F307D00685A7F /* Supporting Files */,
@@ -239,6 +247,7 @@
 				6037B1CE187F307D00685A7F /* InfoPlist.strings in Resources */,
 				6037B1DC187F307D00685A7F /* Images.xcassets in Resources */,
 				6037B1D4187F307D00685A7F /* Credits.rtf in Resources */,
+				60CDF3EA1880322C00D3EF18 /* AccessibilityInfoWindow.xib in Resources */,
 				6037B1DA187F307D00685A7F /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60CDF3EF1880420C00D3EF18 /* CAXAccessibilityPanelController.m in Sources */,
 				6037B1D0187F307D00685A7F /* main.m in Sources */,
 				6037B1D7187F307D00685A7F /* CAXAppDelegate.m in Sources */,
 				60CDF3E8187F311000D3EF18 /* CAXAccessibilityObserver.m in Sources */,

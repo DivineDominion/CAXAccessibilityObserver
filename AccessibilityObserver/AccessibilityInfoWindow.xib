@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="CAXAccessibilityPanelController">
+            <connections>
+                <outlet property="window" destination="qNQ-LN-y9R" id="vqs-2B-Qar"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="qNQ-LN-y9R" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES" documentModal="YES"/>
+            <rect key="contentRect" x="167" y="107" width="755" height="673"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <view key="contentView" id="l0X-aE-Fei">
+                <rect key="frame" x="0.0" y="0.0" width="755" height="673"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HY8-cD-rz3">
+                        <rect key="frame" x="160" y="636" width="435" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please enable Accessibilty in System Preferences ‣ Security &amp; Privacy." id="a43-pM-66p">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BH0-Om-45s">
+                        <rect key="frame" x="243" y="582" width="269" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="(You must click the lock to make changes)" id="eEu-vH-7dC">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <imageView translatesAutoresizingMaskIntoConstraints="NO" id="uex-UQ-Rbz">
+                        <rect key="frame" x="17" y="17" width="721" height="560"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageFrameStyle="grayBezel" image="AccessibilityPreview" id="jTe-Be-5Uh"/>
+                    </imageView>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ofa-nC-Cp3">
+                        <rect key="frame" x="278" y="600" width="199" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Open System Preferences" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zbq-8K-xhe">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="openSystemPreferences:" target="-2" id="5T4-kl-Cpe"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="uex-UQ-Rbz" firstAttribute="leading" secondItem="l0X-aE-Fei" secondAttribute="leading" constant="20" symbolic="YES" id="7Fp-KP-P9Z"/>
+                    <constraint firstAttribute="centerX" secondItem="HY8-cD-rz3" secondAttribute="centerX" id="EM0-gf-3aa"/>
+                    <constraint firstItem="HY8-cD-rz3" firstAttribute="top" secondItem="l0X-aE-Fei" secondAttribute="top" constant="20" symbolic="YES" id="IaU-Bf-t57"/>
+                    <constraint firstAttribute="trailing" secondItem="uex-UQ-Rbz" secondAttribute="trailing" constant="20" symbolic="YES" id="gWH-7g-zdy"/>
+                    <constraint firstAttribute="centerX" secondItem="Ofa-nC-Cp3" secondAttribute="centerX" id="jOY-jC-BXm"/>
+                    <constraint firstAttribute="bottom" secondItem="uex-UQ-Rbz" secondAttribute="bottom" constant="20" symbolic="YES" id="mdU-Jo-EPn"/>
+                    <constraint firstItem="uex-UQ-Rbz" firstAttribute="top" secondItem="BH0-Om-45s" secondAttribute="bottom" constant="8" symbolic="YES" id="seR-h7-Lfy"/>
+                    <constraint firstAttribute="centerX" secondItem="BH0-Om-45s" secondAttribute="centerX" id="tki-WH-KoN"/>
+                    <constraint firstItem="Ofa-nC-Cp3" firstAttribute="top" secondItem="HY8-cD-rz3" secondAttribute="bottom" constant="8" symbolic="YES" id="vWR-OE-hpX"/>
+                    <constraint firstItem="BH0-Om-45s" firstAttribute="top" secondItem="Ofa-nC-Cp3" secondAttribute="bottom" constant="8" symbolic="YES" id="xsI-5w-lET"/>
+                </constraints>
+            </view>
+        </window>
+    </objects>
+    <resources>
+        <image name="AccessibilityPreview" width="668" height="522"/>
+    </resources>
+</document>
