@@ -32,7 +32,7 @@ NSString * const kDistributedAccessibilityChangeNotification = @"com.apple.acces
 
 @implementation CAXAccessibilityObserver
 
-@synthesize useCustomDialogue = _useCustomDialogue;
+@synthesize useCustomDialog = _useCustomDialog;
 @synthesize grantedBlock = _grantedBlock;
 @synthesize revokedBlock = _revokedBlock;
 
@@ -47,6 +47,8 @@ NSString * const kDistributedAccessibilityChangeNotification = @"com.apple.acces
     
     if (self)
     {
+        self.useCustomDialog = YES;
+        
         self.grantedBlock = grantedBlock;
         self.revokedBlock = revokedBlock;
         
@@ -71,7 +73,7 @@ NSString * const kDistributedAccessibilityChangeNotification = @"com.apple.acces
         }
         else
         {
-            if ([self useCustomDialogue])
+            if ([self useCustomDialog])
             {
                 [[self.windowController window] makeKeyAndOrderFront:NSApp];
             }
@@ -127,11 +129,6 @@ NSString * const kDistributedAccessibilityChangeNotification = @"com.apple.acces
         
         self.accessibilityTrusted = trustingNow;
     }
-}
-
-- (BOOL)useCustomDialogue
-{
-    return true;
 }
 
 @end

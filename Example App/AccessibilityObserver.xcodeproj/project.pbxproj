@@ -20,23 +20,6 @@
 		60CDF3FD1880ABFF00D3EF18 /* CAXAccessibilityPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CDF3F91880ABFF00D3EF18 /* CAXAccessibilityPanelController.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		60CDF43B1880AD6F00D3EF18 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 60CDF4361880AD6D00D3EF18 /* CAXAccessibilityObserver.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 60CDF4081880AD6D00D3EF18;
-			remoteInfo = CAXAccessibilityObserver;
-		};
-		60CDF43D1880AD6F00D3EF18 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 60CDF4361880AD6D00D3EF18 /* CAXAccessibilityObserver.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 60CDF41F1880AD6D00D3EF18;
-			remoteInfo = CAXAccessibilityObserverTests;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		6037B1C0187F307D00685A7F /* AccessibilityObserver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccessibilityObserver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6037B1C3187F307D00685A7F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -59,7 +42,6 @@
 		60CDF3F71880ABFF00D3EF18 /* CAXAccessibilityObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CAXAccessibilityObserver.m; path = ../../Source/CAXAccessibilityObserver.m; sourceTree = "<group>"; };
 		60CDF3F81880ABFF00D3EF18 /* CAXAccessibilityPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAXAccessibilityPanelController.h; path = ../../Source/CAXAccessibilityPanelController.h; sourceTree = "<group>"; };
 		60CDF3F91880ABFF00D3EF18 /* CAXAccessibilityPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CAXAccessibilityPanelController.m; path = ../../Source/CAXAccessibilityPanelController.m; sourceTree = "<group>"; };
-		60CDF4361880AD6D00D3EF18 /* CAXAccessibilityObserver.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CAXAccessibilityObserver.xcodeproj; path = ../../CAXAccessibilityObserver/CAXAccessibilityObserver.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +78,6 @@
 		6037B1C2187F307D00685A7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				60CDF4361880AD6D00D3EF18 /* CAXAccessibilityObserver.xcodeproj */,
 				6037B1C3187F307D00685A7F /* Cocoa.framework */,
 				6037B1E2187F307D00685A7F /* XCTest.framework */,
 				6037B1C5187F307D00685A7F /* Other Frameworks */,
@@ -153,15 +134,6 @@
 			path = AccessibilityObserver;
 			sourceTree = "<group>";
 		};
-		60CDF4371880AD6D00D3EF18 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				60CDF43C1880AD6F00D3EF18 /* CAXAccessibilityObserver.framework */,
-				60CDF43E1880AD6F00D3EF18 /* CAXAccessibilityObserverTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -203,35 +175,12 @@
 			mainGroup = 6037B1B7187F307C00685A7F;
 			productRefGroup = 6037B1C1187F307D00685A7F /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 60CDF4371880AD6D00D3EF18 /* Products */;
-					ProjectRef = 60CDF4361880AD6D00D3EF18 /* CAXAccessibilityObserver.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				6037B1BF187F307D00685A7F /* AccessibilityObserver */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		60CDF43C1880AD6F00D3EF18 /* CAXAccessibilityObserver.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CAXAccessibilityObserver.framework;
-			remoteRef = 60CDF43B1880AD6F00D3EF18 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		60CDF43E1880AD6F00D3EF18 /* CAXAccessibilityObserverTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = CAXAccessibilityObserverTests.xctest;
-			remoteRef = 60CDF43D1880AD6F00D3EF18 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6037B1BE187F307D00685A7F /* Resources */ = {

@@ -11,14 +11,14 @@
 
 @interface CAXAccessibilityObserver : NSObject
 {
-    BOOL _useCustomDialogue;
+    BOOL _useCustomDialog;
     void (^_grantedBlock)(void);
     void (^_revokedBlock)(void);
 }
 
 @property (nonatomic, strong, readwrite) CAXAccessibilityPanelController *accessibilityViewController;
 @property (nonatomic, strong, readwrite) NSWindowController *windowController;
-@property (nonatomic, assign, readwrite) BOOL useCustomDialogue;
+@property (nonatomic, assign, readwrite) BOOL useCustomDialog;
 
 @property (nonatomic, strong, readwrite) void (^grantedBlock)(void);
 @property (nonatomic, strong, readwrite) void (^revokedBlock)(void);

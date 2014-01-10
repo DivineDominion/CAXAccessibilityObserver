@@ -16,6 +16,8 @@
         [strongSelf.accessibilityObserver requestPrivileges];
     }];
     
+    [self.accessibilityObserver setUseCustomDialog:YES];
+    
     [self.accessibilityObserver requestPrivileges];
 }
 
