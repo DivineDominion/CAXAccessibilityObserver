@@ -19,7 +19,6 @@ NSString * const kSecurityPreferencePaneName = @"Security.prefPane";
     //   cf. <http://stackoverflow.com/a/11482772/1460929>
     if ([[super window] styleMask] & NSTexturedBackgroundWindowMask)
     {
-        NSLog(@"textured");
         [[super window] setContentBorderThickness:0 forEdge:NSMaxYEdge]; // top border
         [[super window] setContentBorderThickness:0 forEdge:NSMinYEdge]; // bottom border
         

@@ -14,10 +14,10 @@
 		6037B1D7187F307D00685A7F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6037B1D6187F307D00685A7F /* AppDelegate.m */; };
 		6037B1DA187F307D00685A7F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6037B1D8187F307D00685A7F /* MainMenu.xib */; };
 		6037B1DC187F307D00685A7F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6037B1DB187F307D00685A7F /* Images.xcassets */; };
-		60CDF3E8187F311000D3EF18 /* CAXAccessibilityObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CDF3E7187F311000D3EF18 /* CAXAccessibilityObserver.m */; };
-		60CDF3EA1880322C00D3EF18 /* AccessibilityInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60CDF3E91880322C00D3EF18 /* AccessibilityInfoWindow.xib */; };
-		60CDF3EF1880420C00D3EF18 /* CAXAccessibilityPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CDF3ED1880420C00D3EF18 /* CAXAccessibilityPanelController.m */; };
-		60CDF3F21880A92B00D3EF18 /* AccessibilityResources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60CDF3F11880A92B00D3EF18 /* AccessibilityResources.xcassets */; };
+		60CDF3FA1880ABFF00D3EF18 /* AccessibilityInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60CDF3F41880ABFF00D3EF18 /* AccessibilityInfoWindow.xib */; };
+		60CDF3FB1880ABFF00D3EF18 /* AccessibilityResources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60CDF3F51880ABFF00D3EF18 /* AccessibilityResources.xcassets */; };
+		60CDF3FC1880ABFF00D3EF18 /* CAXAccessibilityObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CDF3F71880ABFF00D3EF18 /* CAXAccessibilityObserver.m */; };
+		60CDF3FD1880ABFF00D3EF18 /* CAXAccessibilityPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CDF3F91880ABFF00D3EF18 /* CAXAccessibilityPanelController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,12 +36,12 @@
 		6037B1D9187F307D00685A7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6037B1DB187F307D00685A7F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6037B1E2187F307D00685A7F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		60CDF3E6187F311000D3EF18 /* CAXAccessibilityObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXAccessibilityObserver.h; sourceTree = "<group>"; };
-		60CDF3E7187F311000D3EF18 /* CAXAccessibilityObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAXAccessibilityObserver.m; sourceTree = "<group>"; };
-		60CDF3E91880322C00D3EF18 /* AccessibilityInfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccessibilityInfoWindow.xib; sourceTree = "<group>"; };
-		60CDF3EC1880420C00D3EF18 /* CAXAccessibilityPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXAccessibilityPanelController.h; sourceTree = "<group>"; };
-		60CDF3ED1880420C00D3EF18 /* CAXAccessibilityPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAXAccessibilityPanelController.m; sourceTree = "<group>"; };
-		60CDF3F11880A92B00D3EF18 /* AccessibilityResources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AccessibilityResources.xcassets; sourceTree = "<group>"; };
+		60CDF3F41880ABFF00D3EF18 /* AccessibilityInfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AccessibilityInfoWindow.xib; path = ../../Source/AccessibilityInfoWindow.xib; sourceTree = "<group>"; };
+		60CDF3F51880ABFF00D3EF18 /* AccessibilityResources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = AccessibilityResources.xcassets; path = ../../Source/AccessibilityResources.xcassets; sourceTree = "<group>"; };
+		60CDF3F61880ABFF00D3EF18 /* CAXAccessibilityObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAXAccessibilityObserver.h; path = ../../Source/CAXAccessibilityObserver.h; sourceTree = "<group>"; };
+		60CDF3F71880ABFF00D3EF18 /* CAXAccessibilityObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CAXAccessibilityObserver.m; path = ../../Source/CAXAccessibilityObserver.m; sourceTree = "<group>"; };
+		60CDF3F81880ABFF00D3EF18 /* CAXAccessibilityPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAXAccessibilityPanelController.h; path = ../../Source/CAXAccessibilityPanelController.h; sourceTree = "<group>"; };
+		60CDF3F91880ABFF00D3EF18 /* CAXAccessibilityPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CAXAccessibilityPanelController.m; path = ../../Source/CAXAccessibilityPanelController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,12 +123,12 @@
 		60CDF3F31880A9AA00D3EF18 /* Accessibility Observation */ = {
 			isa = PBXGroup;
 			children = (
-				60CDF3E6187F311000D3EF18 /* CAXAccessibilityObserver.h */,
-				60CDF3E7187F311000D3EF18 /* CAXAccessibilityObserver.m */,
-				60CDF3EC1880420C00D3EF18 /* CAXAccessibilityPanelController.h */,
-				60CDF3ED1880420C00D3EF18 /* CAXAccessibilityPanelController.m */,
-				60CDF3E91880322C00D3EF18 /* AccessibilityInfoWindow.xib */,
-				60CDF3F11880A92B00D3EF18 /* AccessibilityResources.xcassets */,
+				60CDF3F61880ABFF00D3EF18 /* CAXAccessibilityObserver.h */,
+				60CDF3F71880ABFF00D3EF18 /* CAXAccessibilityObserver.m */,
+				60CDF3F81880ABFF00D3EF18 /* CAXAccessibilityPanelController.h */,
+				60CDF3F91880ABFF00D3EF18 /* CAXAccessibilityPanelController.m */,
+				60CDF3F41880ABFF00D3EF18 /* AccessibilityInfoWindow.xib */,
+				60CDF3F51880ABFF00D3EF18 /* AccessibilityResources.xcassets */,
 			);
 			name = "Accessibility Observation";
 			path = AccessibilityObserver;
@@ -189,9 +189,9 @@
 			files = (
 				6037B1CE187F307D00685A7F /* InfoPlist.strings in Resources */,
 				6037B1DC187F307D00685A7F /* Images.xcassets in Resources */,
-				60CDF3F21880A92B00D3EF18 /* AccessibilityResources.xcassets in Resources */,
+				60CDF3FA1880ABFF00D3EF18 /* AccessibilityInfoWindow.xib in Resources */,
 				6037B1D4187F307D00685A7F /* Credits.rtf in Resources */,
-				60CDF3EA1880322C00D3EF18 /* AccessibilityInfoWindow.xib in Resources */,
+				60CDF3FB1880ABFF00D3EF18 /* AccessibilityResources.xcassets in Resources */,
 				6037B1DA187F307D00685A7F /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,10 +203,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60CDF3EF1880420C00D3EF18 /* CAXAccessibilityPanelController.m in Sources */,
+				60CDF3FD1880ABFF00D3EF18 /* CAXAccessibilityPanelController.m in Sources */,
+				60CDF3FC1880ABFF00D3EF18 /* CAXAccessibilityObserver.m in Sources */,
 				6037B1D0187F307D00685A7F /* main.m in Sources */,
 				6037B1D7187F307D00685A7F /* AppDelegate.m in Sources */,
-				60CDF3E8187F311000D3EF18 /* CAXAccessibilityObserver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
