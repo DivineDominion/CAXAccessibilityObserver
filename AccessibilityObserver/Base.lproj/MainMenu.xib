@@ -646,7 +646,7 @@
                 </menuItem>
             </items>
         </menu>
-        <customObject id="494" customClass="CAXAppDelegate"/>
+        <customObject id="494" customClass="AppDelegate"/>
         <customObject id="420" customClass="NSFontManager"/>
     </objects>
 </document>

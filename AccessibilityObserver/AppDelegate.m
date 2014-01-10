@@ -1,14 +1,6 @@
-//
-//  CAXAppDelegate.m
-//  AccessibilityObserver
-//
-//  Created by Christian Tietze on 09.01.14.
-//  Copyright (c) 2014 Christian Tietze. All rights reserved.
-//
+#import "AppDelegate.h"
 
-#import "CAXAppDelegate.h"
-
-@implementation CAXAppDelegate
+@implementation AppDelegate
 @synthesize accessibilityObserver;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -18,7 +10,7 @@
         NSLog(@"granted");
     } revokedBlock:^{
         NSLog(@"revoked");
-        __strong CAXAppDelegate *strongSelf = weakSelf;
+        __strong AppDelegate *strongSelf = weakSelf;
         
         // Show request dialogue again
         [strongSelf.accessibilityObserver requestPrivileges];

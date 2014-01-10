@@ -11,27 +11,14 @@
 		6037B1CE187F307D00685A7F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6037B1CC187F307D00685A7F /* InfoPlist.strings */; };
 		6037B1D0187F307D00685A7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6037B1CF187F307D00685A7F /* main.m */; };
 		6037B1D4187F307D00685A7F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6037B1D2187F307D00685A7F /* Credits.rtf */; };
-		6037B1D7187F307D00685A7F /* CAXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6037B1D6187F307D00685A7F /* CAXAppDelegate.m */; };
+		6037B1D7187F307D00685A7F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6037B1D6187F307D00685A7F /* AppDelegate.m */; };
 		6037B1DA187F307D00685A7F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6037B1D8187F307D00685A7F /* MainMenu.xib */; };
 		6037B1DC187F307D00685A7F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6037B1DB187F307D00685A7F /* Images.xcassets */; };
-		6037B1E3187F307D00685A7F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6037B1E2187F307D00685A7F /* XCTest.framework */; };
-		6037B1E4187F307D00685A7F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6037B1C3187F307D00685A7F /* Cocoa.framework */; };
-		6037B1EC187F307D00685A7F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6037B1EA187F307D00685A7F /* InfoPlist.strings */; };
-		6037B1EE187F307D00685A7F /* AccessibilityObserverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6037B1ED187F307D00685A7F /* AccessibilityObserverTests.m */; };
 		60CDF3E8187F311000D3EF18 /* CAXAccessibilityObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CDF3E7187F311000D3EF18 /* CAXAccessibilityObserver.m */; };
 		60CDF3EA1880322C00D3EF18 /* AccessibilityInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60CDF3E91880322C00D3EF18 /* AccessibilityInfoWindow.xib */; };
 		60CDF3EF1880420C00D3EF18 /* CAXAccessibilityPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CDF3ED1880420C00D3EF18 /* CAXAccessibilityPanelController.m */; };
+		60CDF3F21880A92B00D3EF18 /* AccessibilityResources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60CDF3F11880A92B00D3EF18 /* AccessibilityResources.xcassets */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		6037B1E5187F307D00685A7F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6037B1B8187F307C00685A7F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6037B1BF187F307D00685A7F;
-			remoteInfo = AccessibilityObserver;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6037B1C0187F307D00685A7F /* AccessibilityObserver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccessibilityObserver.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,20 +31,17 @@
 		6037B1CF187F307D00685A7F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6037B1D1187F307D00685A7F /* AccessibilityObserver-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AccessibilityObserver-Prefix.pch"; sourceTree = "<group>"; };
 		6037B1D3187F307D00685A7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		6037B1D5187F307D00685A7F /* CAXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAXAppDelegate.h; sourceTree = "<group>"; };
-		6037B1D6187F307D00685A7F /* CAXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAXAppDelegate.m; sourceTree = "<group>"; };
+		6037B1D5187F307D00685A7F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6037B1D6187F307D00685A7F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6037B1D9187F307D00685A7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6037B1DB187F307D00685A7F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6037B1E1187F307D00685A7F /* AccessibilityObserverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccessibilityObserverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6037B1E2187F307D00685A7F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		6037B1E9187F307D00685A7F /* AccessibilityObserverTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AccessibilityObserverTests-Info.plist"; sourceTree = "<group>"; };
-		6037B1EB187F307D00685A7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6037B1ED187F307D00685A7F /* AccessibilityObserverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccessibilityObserverTests.m; sourceTree = "<group>"; };
 		60CDF3E6187F311000D3EF18 /* CAXAccessibilityObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXAccessibilityObserver.h; sourceTree = "<group>"; };
 		60CDF3E7187F311000D3EF18 /* CAXAccessibilityObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAXAccessibilityObserver.m; sourceTree = "<group>"; };
 		60CDF3E91880322C00D3EF18 /* AccessibilityInfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccessibilityInfoWindow.xib; sourceTree = "<group>"; };
 		60CDF3EC1880420C00D3EF18 /* CAXAccessibilityPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXAccessibilityPanelController.h; sourceTree = "<group>"; };
 		60CDF3ED1880420C00D3EF18 /* CAXAccessibilityPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAXAccessibilityPanelController.m; sourceTree = "<group>"; };
+		60CDF3F11880A92B00D3EF18 /* AccessibilityResources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AccessibilityResources.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,23 +53,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6037B1DE187F307D00685A7F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6037B1E4187F307D00685A7F /* Cocoa.framework in Frameworks */,
-				6037B1E3187F307D00685A7F /* XCTest.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		6037B1B7187F307C00685A7F = {
 			isa = PBXGroup;
 			children = (
-				6037B1C9187F307D00685A7F /* AccessibilityObserver */,
-				6037B1E7187F307D00685A7F /* AccessibilityObserverTests */,
+				6037B1C9187F307D00685A7F /* Example App */,
+				60CDF3F31880A9AA00D3EF18 /* Accessibility Observation */,
+				6037B1CA187F307D00685A7F /* Supporting Files */,
 				6037B1C2187F307D00685A7F /* Frameworks */,
 				6037B1C1187F307D00685A7F /* Products */,
 			);
@@ -95,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				6037B1C0187F307D00685A7F /* AccessibilityObserver.app */,
-				6037B1E1187F307D00685A7F /* AccessibilityObserverTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,20 +95,15 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		6037B1C9187F307D00685A7F /* AccessibilityObserver */ = {
+		6037B1C9187F307D00685A7F /* Example App */ = {
 			isa = PBXGroup;
 			children = (
-				6037B1D5187F307D00685A7F /* CAXAppDelegate.h */,
-				6037B1D6187F307D00685A7F /* CAXAppDelegate.m */,
-				60CDF3E6187F311000D3EF18 /* CAXAccessibilityObserver.h */,
-				60CDF3E7187F311000D3EF18 /* CAXAccessibilityObserver.m */,
-				60CDF3EC1880420C00D3EF18 /* CAXAccessibilityPanelController.h */,
-				60CDF3ED1880420C00D3EF18 /* CAXAccessibilityPanelController.m */,
-				60CDF3E91880322C00D3EF18 /* AccessibilityInfoWindow.xib */,
+				6037B1D5187F307D00685A7F /* AppDelegate.h */,
+				6037B1D6187F307D00685A7F /* AppDelegate.m */,
 				6037B1D8187F307D00685A7F /* MainMenu.xib */,
 				6037B1DB187F307D00685A7F /* Images.xcassets */,
-				6037B1CA187F307D00685A7F /* Supporting Files */,
 			);
+			name = "Example App";
 			path = AccessibilityObserver;
 			sourceTree = "<group>";
 		};
@@ -147,24 +117,21 @@
 				6037B1D2187F307D00685A7F /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			path = AccessibilityObserver;
 			sourceTree = "<group>";
 		};
-		6037B1E7187F307D00685A7F /* AccessibilityObserverTests */ = {
+		60CDF3F31880A9AA00D3EF18 /* Accessibility Observation */ = {
 			isa = PBXGroup;
 			children = (
-				6037B1ED187F307D00685A7F /* AccessibilityObserverTests.m */,
-				6037B1E8187F307D00685A7F /* Supporting Files */,
+				60CDF3E6187F311000D3EF18 /* CAXAccessibilityObserver.h */,
+				60CDF3E7187F311000D3EF18 /* CAXAccessibilityObserver.m */,
+				60CDF3EC1880420C00D3EF18 /* CAXAccessibilityPanelController.h */,
+				60CDF3ED1880420C00D3EF18 /* CAXAccessibilityPanelController.m */,
+				60CDF3E91880322C00D3EF18 /* AccessibilityInfoWindow.xib */,
+				60CDF3F11880A92B00D3EF18 /* AccessibilityResources.xcassets */,
 			);
-			path = AccessibilityObserverTests;
-			sourceTree = "<group>";
-		};
-		6037B1E8187F307D00685A7F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6037B1E9187F307D00685A7F /* AccessibilityObserverTests-Info.plist */,
-				6037B1EA187F307D00685A7F /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
+			name = "Accessibility Observation";
+			path = AccessibilityObserver;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,24 +154,6 @@
 			productReference = 6037B1C0187F307D00685A7F /* AccessibilityObserver.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6037B1E0187F307D00685A7F /* AccessibilityObserverTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6037B1F4187F307D00685A7F /* Build configuration list for PBXNativeTarget "AccessibilityObserverTests" */;
-			buildPhases = (
-				6037B1DD187F307D00685A7F /* Sources */,
-				6037B1DE187F307D00685A7F /* Frameworks */,
-				6037B1DF187F307D00685A7F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6037B1E6187F307D00685A7F /* PBXTargetDependency */,
-			);
-			name = AccessibilityObserverTests;
-			productName = AccessibilityObserverTests;
-			productReference = 6037B1E1187F307D00685A7F /* AccessibilityObserverTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -214,11 +163,6 @@
 				CLASSPREFIX = CAX;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Christian Tietze";
-				TargetAttributes = {
-					6037B1E0187F307D00685A7F = {
-						TestTargetID = 6037B1BF187F307D00685A7F;
-					};
-				};
 			};
 			buildConfigurationList = 6037B1BB187F307C00685A7F /* Build configuration list for PBXProject "AccessibilityObserver" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -234,7 +178,6 @@
 			projectRoot = "";
 			targets = (
 				6037B1BF187F307D00685A7F /* AccessibilityObserver */,
-				6037B1E0187F307D00685A7F /* AccessibilityObserverTests */,
 			);
 		};
 /* End PBXProject section */
@@ -246,17 +189,10 @@
 			files = (
 				6037B1CE187F307D00685A7F /* InfoPlist.strings in Resources */,
 				6037B1DC187F307D00685A7F /* Images.xcassets in Resources */,
+				60CDF3F21880A92B00D3EF18 /* AccessibilityResources.xcassets in Resources */,
 				6037B1D4187F307D00685A7F /* Credits.rtf in Resources */,
 				60CDF3EA1880322C00D3EF18 /* AccessibilityInfoWindow.xib in Resources */,
 				6037B1DA187F307D00685A7F /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6037B1DF187F307D00685A7F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6037B1EC187F307D00685A7F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,28 +205,12 @@
 			files = (
 				60CDF3EF1880420C00D3EF18 /* CAXAccessibilityPanelController.m in Sources */,
 				6037B1D0187F307D00685A7F /* main.m in Sources */,
-				6037B1D7187F307D00685A7F /* CAXAppDelegate.m in Sources */,
+				6037B1D7187F307D00685A7F /* AppDelegate.m in Sources */,
 				60CDF3E8187F311000D3EF18 /* CAXAccessibilityObserver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6037B1DD187F307D00685A7F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6037B1EE187F307D00685A7F /* AccessibilityObserverTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		6037B1E6187F307D00685A7F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6037B1BF187F307D00685A7F /* AccessibilityObserver */;
-			targetProxy = 6037B1E5187F307D00685A7F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6037B1CC187F307D00685A7F /* InfoPlist.strings */ = {
@@ -315,14 +235,6 @@
 				6037B1D9187F307D00685A7F /* Base */,
 			);
 			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		6037B1EA187F307D00685A7F /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6037B1EB187F307D00685A7F /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -422,46 +334,6 @@
 			};
 			name = Release;
 		};
-		6037B1F5187F307D00685A7F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AccessibilityObserver.app/Contents/MacOS/AccessibilityObserver";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AccessibilityObserver/AccessibilityObserver-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "AccessibilityObserverTests/AccessibilityObserverTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		6037B1F6187F307D00685A7F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AccessibilityObserver.app/Contents/MacOS/AccessibilityObserver";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AccessibilityObserver/AccessibilityObserver-Prefix.pch";
-				INFOPLIST_FILE = "AccessibilityObserverTests/AccessibilityObserverTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -479,15 +351,6 @@
 			buildConfigurations = (
 				6037B1F2187F307D00685A7F /* Debug */,
 				6037B1F3187F307D00685A7F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6037B1F4187F307D00685A7F /* Build configuration list for PBXNativeTarget "AccessibilityObserverTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6037B1F5187F307D00685A7F /* Debug */,
-				6037B1F6187F307D00685A7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
