@@ -9,5 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 @interface CAXAccessibilityPanelController : NSWindowController
+
 - (IBAction)openSystemPreferences:(id)sender;
+
 @end

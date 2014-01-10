@@ -10,25 +10,28 @@
 
 NSString * const kSecurityPreferencePaneName = @"Security.prefPane";
 
-@interface CAXAccessibilityPanelController ()
-
-@end
 
 @implementation CAXAccessibilityPanelController
 
-- (id)initWithWindowNibName:(NSString *)nibNameOrNil
+- (void)windowDidLoad
 {
-    self = [super initWithWindowNibName:nibNameOrNil];
-    
-    if (self)
+    // Necessary action to fix 10.7+ gradient bug in textured window
+    //   cf. <http://stackoverflow.com/a/11482772/1460929>
+    if ([[super window] styleMask] & NSTexturedBackgroundWindowMask)
     {
-        // Initialization code here.
+        NSLog(@"textured");
+        [[super window] setContentBorderThickness:0 forEdge:NSMaxYEdge]; // top border
+        [[super window] setContentBorderThickness:0 forEdge:NSMinYEdge]; // bottom border
+        
+        // disable the auto-recalculation of the window's content border
+        [[super window] setAutorecalculatesContentBorderThickness:NO forEdge:NSMaxYEdge];
+        [[super window] setAutorecalculatesContentBorderThickness:NO forEdge:NSMinYEdge];
     }
-    
-    return self;
 }
 
-- (void)openSystemPreferences:(id)sender
+# pragma mark -
+
+- (IBAction)openSystemPreferences:(id)sender
 {
     [[NSWorkspace sharedWorkspace] openURL:[self URLforSecurityPreferencePane]];
     
@@ -56,4 +59,5 @@ NSString * const kSecurityPreferencePaneName = @"Security.prefPane";
     
     return preferencePaneURL;
 }
+
 @end

@@ -6,21 +6,22 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="CAXAccessibilityPanelController">
             <connections>
+                <outlet property="imageView" destination="uex-UQ-Rbz" id="N20-P7-TjA"/>
                 <outlet property="window" destination="qNQ-LN-y9R" id="vqs-2B-Qar"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application"/>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="qNQ-LN-y9R" customClass="NSPanel">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES" documentModal="YES"/>
-            <rect key="contentRect" x="167" y="107" width="755" height="673"/>
+        <window title="Additional Access Request" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" showsToolbarButton="NO" animationBehavior="default" id="qNQ-LN-y9R" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" texturedBackground="YES"/>
+            <rect key="contentRect" x="167" y="107" width="755" height="681"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
             <view key="contentView" id="l0X-aE-Fei">
-                <rect key="frame" x="0.0" y="0.0" width="755" height="673"/>
+                <rect key="frame" x="0.0" y="0.0" width="755" height="681"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HY8-cD-rz3">
-                        <rect key="frame" x="160" y="636" width="435" height="17"/>
+                        <rect key="frame" x="160" y="644" width="435" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please enable Accessibilty in System Preferences ‣ Security &amp; Privacy." id="a43-pM-66p">
                             <font key="font" metaFont="system"/>
@@ -29,7 +30,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BH0-Om-45s">
-                        <rect key="frame" x="243" y="582" width="269" height="17"/>
+                        <rect key="frame" x="243" y="590" width="269" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="(You must click the lock to make changes)" id="eEu-vH-7dC">
                             <font key="font" metaFont="system"/>
@@ -38,12 +39,12 @@
                         </textFieldCell>
                     </textField>
                     <imageView translatesAutoresizingMaskIntoConstraints="NO" id="uex-UQ-Rbz">
-                        <rect key="frame" x="17" y="17" width="721" height="560"/>
+                        <rect key="frame" x="17" y="17" width="721" height="568"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageFrameStyle="grayBezel" image="AccessibilityPreview" id="jTe-Be-5Uh"/>
                     </imageView>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ofa-nC-Cp3">
-                        <rect key="frame" x="278" y="600" width="199" height="32"/>
+                        <rect key="frame" x="278" y="608" width="199" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Open System Preferences" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zbq-8K-xhe">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -67,6 +68,9 @@
                     <constraint firstItem="BH0-Om-45s" firstAttribute="top" secondItem="Ofa-nC-Cp3" secondAttribute="bottom" constant="8" symbolic="YES" id="xsI-5w-lET"/>
                 </constraints>
             </view>
+            <connections>
+                <outlet property="initialFirstResponder" destination="Ofa-nC-Cp3" id="NC0-d9-wcr"/>
+            </connections>
         </window>
     </objects>
     <resources>

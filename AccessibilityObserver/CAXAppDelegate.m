@@ -13,10 +13,15 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    __weak id weakSelf = self;
     self.accessibilityObserver = [CAXAccessibilityObserver observerWithGrantedBlock:^{
-        NSLog(@"use something that requires accessibilty privileges");
+        NSLog(@"granted");
     } revokedBlock:^{
-        NSLog(@"stop doing something that requires accessibilty privileges");
+        NSLog(@"revoked");
+        __strong CAXAppDelegate *strongSelf = weakSelf;
+        
+        // Show request dialogue again
+        [strongSelf.accessibilityObserver requestPrivileges];
     }];
     
     [self.accessibilityObserver requestPrivileges];

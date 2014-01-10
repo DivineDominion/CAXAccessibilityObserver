@@ -7,15 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CAXAccessibilityPanelController.h"
 
 @interface CAXAccessibilityObserver : NSObject
 {
+    BOOL _useCustomDialogue;
     void (^_grantedBlock)(void);
     void (^_revokedBlock)(void);
 }
 
-@property (nonatomic, strong, readwrite) NSViewController *accessibilityViewController;
+@property (nonatomic, strong, readwrite) CAXAccessibilityPanelController *accessibilityViewController;
 @property (nonatomic, strong, readwrite) NSWindowController *windowController;
+@property (nonatomic, assign, readwrite) BOOL useCustomDialogue;
 
 @property (nonatomic, strong, readwrite) void (^grantedBlock)(void);
 @property (nonatomic, strong, readwrite) void (^revokedBlock)(void);

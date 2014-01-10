@@ -14,12 +14,16 @@
 // open to adjustment.
 #define INVOCATION_DELAY 0.5
 
+NSString * const kDistributedAccessibilityChangeNotification = @"com.apple.accessibility.api";
+
 @interface CAXAccessibilityObserver ()
 {
     BOOL _accessibilityTrusted;
+    id _accessibilityChangeObserver;
 }
 
 @property (nonatomic, assign, readwrite, getter = wasAccessibilityTrusted) BOOL accessibilityTrusted;
+@property (nonatomic, strong, readwrite) id accessibilityChangeObserver;
 
 - (void)observeAccessibilityNotifications;
 - (void)accessibiltySettingsDidChange;
@@ -28,6 +32,7 @@
 
 @implementation CAXAccessibilityObserver
 
+@synthesize useCustomDialogue = _useCustomDialogue;
 @synthesize grantedBlock = _grantedBlock;
 @synthesize revokedBlock = _revokedBlock;
 
@@ -44,19 +49,62 @@
     {
         self.grantedBlock = grantedBlock;
         self.revokedBlock = revokedBlock;
+        
+        CAXAccessibilityPanelController *viewController = [[CAXAccessibilityPanelController alloc] initWithWindowNibName:@"AccessibilityInfoWindow"];
+        
+        self.windowController = viewController;
     }
     
     return self;
 }
 
+- (void)requestPrivileges
+{
+    if (AXIsProcessTrustedWithOptions != NULL)
+    {
+        // We're on Mavericks
+        self.accessibilityTrusted = AXIsProcessTrustedWithOptions(NULL);
+        
+        if ([self wasAccessibilityTrusted])
+        {
+            self.grantedBlock();
+        }
+        else
+        {
+            if ([self useCustomDialogue])
+            {
+                [[self.windowController window] makeKeyAndOrderFront:NSApp];
+            }
+            else
+            {
+                NSDictionary *options = @{ (__bridge id)kAXTrustedCheckOptionPrompt: @YES };
+                AXIsProcessTrustedWithOptions((__bridge CFDictionaryRef)options);
+            }
+        }
+        
+        [self observeAccessibilityNotifications];
+    }
+    else
+    {
+        // TODO do something for pre 10.9
+    }
+}
+
 - (void)observeAccessibilityNotifications
 {
-    __weak CAXAccessibilityObserver *weakSelf = self;
-    [[NSDistributedNotificationCenter defaultCenter] addObserverForName:@"com.apple.accessibility.api" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
-        __strong CAXAccessibilityObserver *strongSelf = weakSelf;
-        
-        [strongSelf performSelector:@selector(accessibiltySettingsDidChange) withObject:nil afterDelay:INVOCATION_DELAY];
-    }];
+    if (self.accessibilityChangeObserver == nil)
+    {
+        __weak CAXAccessibilityObserver *weakSelf = self;
+        self.accessibilityChangeObserver = [[NSDistributedNotificationCenter defaultCenter]
+                                            addObserverForName:kDistributedAccessibilityChangeNotification
+                                            object:nil
+                                            queue:[NSOperationQueue mainQueue]
+                                            usingBlock:^(NSNotification *note) {
+            __strong CAXAccessibilityObserver *strongSelf = weakSelf;
+            
+            [strongSelf performSelector:@selector(accessibiltySettingsDidChange) withObject:nil afterDelay:INVOCATION_DELAY];
+        }];
+    }
 }
 
 - (void)accessibiltySettingsDidChange
@@ -81,46 +129,9 @@
     }
 }
 
-- (void)requestPrivileges
+- (BOOL)useCustomDialogue
 {
-    if (AXIsProcessTrustedWithOptions != NULL)
-    {
-        // We're on Mavericks
-        
-        if (true)
-        {
-            NSDictionary *options = @{ (__bridge id)kAXTrustedCheckOptionPrompt: @YES };
-            
-            self.accessibilityTrusted = AXIsProcessTrustedWithOptions((__bridge CFDictionaryRef)options);
-        }
-        else
-        {
-            // use custom dialogue
-            self.accessibilityTrusted = AXIsProcessTrustedWithOptions(NULL);
-        }
-        
-        if ([self wasAccessibilityTrusted])
-        {
-            self.grantedBlock();
-        }
-        else
-        {
-            NSLog(@"untrusted");
-            
-            CAXAccessibilityPanelController *vc = [[CAXAccessibilityPanelController alloc] initWithWindowNibName:@"AccessibilityInfoWindow"];
-            
-            [[vc window] makeKeyAndOrderFront:NSApp];
-            
-            self.windowController = vc;
-            // TODO display info message
-        }
-        
-        [self observeAccessibilityNotifications];
-    }
-    else
-    {
-        // TODO do something for pre 10.9
-    }
+    return true;
 }
 
 @end
