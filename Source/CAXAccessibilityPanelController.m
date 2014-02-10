@@ -7,9 +7,7 @@
 //
 
 #import "CAXAccessibilityPanelController.h"
-
-NSString * const kSecurityPreferencePaneName = @"Security.prefPane";
-
+#import "CAXSystemPreferencesUtil.h"
 
 @implementation CAXAccessibilityPanelController
 
@@ -32,31 +30,11 @@ NSString * const kSecurityPreferencePaneName = @"Security.prefPane";
 
 - (IBAction)openSystemPreferences:(id)sender
 {
-    [[NSWorkspace sharedWorkspace] openURL:[self URLforSecurityPreferencePane]];
+    CAXSystemPreferencesUtil *prefsUtil = [[CAXSystemPreferencesUtil alloc] init];
+    
+    [prefsUtil openAccessibilitySystemPreferences];
     
     [[self window] orderOut:self];
-}
-
-- (NSURL *)URLforSecurityPreferencePane {
-    NSURL *preferencePaneURL = nil;
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSArray *searchPathURLs = [fileManager URLsForDirectory:NSPreferencePanesDirectory inDomains:NSAllDomainsMask];
-
-    for (__strong NSURL *pathURL in searchPathURLs) {
-        pathURL = [pathURL URLByAppendingPathComponent:kSecurityPreferencePaneName];
-        
-        if ([fileManager fileExistsAtPath:[pathURL path] isDirectory:nil])
-        {
-            preferencePaneURL = pathURL;
-            
-            break;
-        }
-    }
-    
-    NSAssert(preferencePaneURL, @"There was a problem obtaining the path for the specified preference pane: %@", kSecurityPreferencePaneName);
-    
-    return preferencePaneURL;
 }
 
 @end
