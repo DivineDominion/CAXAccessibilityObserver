@@ -25,14 +25,14 @@
 //
 
 #import "CAXAccessibilityPanelController.h"
-
-NSString * const kSecurityPreferencePaneName = @"Security.prefPane";
-
+#import "CAXSystemPreferencesUtil.h"
 
 @implementation CAXAccessibilityPanelController
 
 - (void)windowDidLoad
 {
+    [[super window] setLevel:NSPopUpMenuWindowLevel];
+    
     // Necessary action to fix 10.7+ gradient bug in textured window
     //   cf. <http://stackoverflow.com/a/11482772/1460929>
     if ([[super window] styleMask] & NSTexturedBackgroundWindowMask)
@@ -50,31 +50,11 @@ NSString * const kSecurityPreferencePaneName = @"Security.prefPane";
 
 - (IBAction)openSystemPreferences:(id)sender
 {
-    [[NSWorkspace sharedWorkspace] openURL:[self URLforSecurityPreferencePane]];
+    CAXSystemPreferencesUtil *prefsUtil = [[CAXSystemPreferencesUtil alloc] init];
+    
+    [prefsUtil openAccessibilitySystemPreferences];
     
     [[self window] orderOut:self];
-}
-
-- (NSURL *)URLforSecurityPreferencePane {
-    NSURL *preferencePaneURL = nil;
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSArray *searchPathURLs = [fileManager URLsForDirectory:NSPreferencePanesDirectory inDomains:NSAllDomainsMask];
-
-    for (__strong NSURL *pathURL in searchPathURLs) {
-        pathURL = [pathURL URLByAppendingPathComponent:kSecurityPreferencePaneName];
-        
-        if ([fileManager fileExistsAtPath:[pathURL path] isDirectory:nil])
-        {
-            preferencePaneURL = pathURL;
-            
-            break;
-        }
-    }
-    
-    NSAssert(preferencePaneURL, @"There was a problem obtaining the path for the specified preference pane: %@", kSecurityPreferencePaneName);
-    
-    return preferencePaneURL;
 }
 
 @end

@@ -26,6 +26,7 @@
 
 #import "CAXAccessibilityObserver.h"
 #import "CAXAccessibilityPanelController.h"
+#import "CAXSystemPreferencesUtil.h"
 
 // If you set this delay to 0.0, the notification will fire but the new trust
 // value won't be accessible in my experience.  This is just heuristics and
@@ -91,9 +92,11 @@ NSString * const kDistributedAccessibilityChangeNotification = @"com.apple.acces
         }
         else
         {
+            // TODO extract to Command
             if ([self useCustomDialog])
             {
                 [[self.windowController window] makeKeyAndOrderFront:NSApp];
+                [NSApp activateIgnoringOtherApps:YES];
             }
             else
             {
@@ -106,7 +109,44 @@ NSString * const kDistributedAccessibilityChangeNotification = @"com.apple.acces
     }
     else
     {
-        // TODO do something for pre 10.9
+        self.accessibilityTrusted = AXIsProcessTrusted() || AXAPIEnabled();
+        
+        if ([self wasAccessibilityTrusted])
+        {
+            self.grantedBlock();
+        }
+        else
+        {
+            // TODO extract to Command
+            
+            NSAlert *alert = [[NSAlert alloc] init];
+            [alert setAlertStyle:NSCriticalAlertStyle];
+            [alert setMessageText:@"WordCounter needs additional privileges."];
+            [alert addButtonWithTitle:@"Open Accessibility Preferences ..."];
+            [alert addButtonWithTitle:@"Quit"];
+            [alert setInformativeText:@"WordCounter needs \"Enable access for assistive devices\" in the Accessibility pane of System Preferences to be turned on. Please start the app again afterwards."];
+            
+            [NSApp activateIgnoringOtherApps:YES];
+            NSInteger attentionrequest = [NSApp requestUserAttention:NSCriticalRequest];
+            
+            NSInteger result = [alert runModal];
+            
+            switch (result)
+            {
+                default:
+                    break;
+                case NSAlertFirstButtonReturn:
+                {
+                    CAXSystemPreferencesUtil *prefUtil = [[CAXSystemPreferencesUtil alloc] init];
+                    [prefUtil openAccessibilitySystemPreferences];
+                    break;
+                }
+            }
+            
+            [NSApp cancelUserAttentionRequest:attentionrequest];
+
+            [[NSApplication sharedApplication] terminate:nil];
+        }
     }
 }
 
@@ -148,5 +188,7 @@ NSString * const kDistributedAccessibilityChangeNotification = @"com.apple.acces
         self.accessibilityTrusted = trustingNow;
     }
 }
+
+
 
 @end
