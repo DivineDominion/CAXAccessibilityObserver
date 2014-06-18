@@ -19,9 +19,9 @@
 //
 
 #import "AppDelegate.h"
+#import "CAXAccessibilityObserver.h"
 
 @implementation AppDelegate
-@synthesize accessibilityObserver;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {

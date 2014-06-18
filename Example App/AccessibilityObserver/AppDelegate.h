@@ -19,7 +19,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "CAXAccessibilityObserver.h"
+
+@class CAXAccessibilityObserver;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 

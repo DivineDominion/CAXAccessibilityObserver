@@ -36,24 +36,14 @@
 NSString * const kDistributedAccessibilityChangeNotification = @"com.apple.accessibility.api";
 
 @interface CAXAccessibilityObserver ()
-{
-    BOOL _accessibilityTrusted;
-    id _accessibilityChangeObserver;
-}
-
 @property (nonatomic, assign, readwrite, getter = wasAccessibilityTrusted) BOOL accessibilityTrusted;
 @property (nonatomic, strong, readwrite) id accessibilityChangeObserver;
 
 - (void)observeAccessibilityNotifications;
 - (void)accessibiltySettingsDidChange;
-
 @end
 
 @implementation CAXAccessibilityObserver
-
-@synthesize useCustomDialog = _useCustomDialog;
-@synthesize grantedBlock = _grantedBlock;
-@synthesize revokedBlock = _revokedBlock;
 
 + (instancetype)observerWithGrantedBlock:(void (^)(void))grantedBlock revokedBlock:(void (^)(void))revokedBlock
 {
@@ -109,7 +99,13 @@ NSString * const kDistributedAccessibilityChangeNotification = @"com.apple.acces
     }
     else
     {
+        // AXAPIEnabled() is deprecated since 10.9
+        // Suppress the compiler warning because we are certain we want to use
+        // this as a fallback.
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         self.accessibilityTrusted = AXIsProcessTrusted() || AXAPIEnabled();
+#pragma clang diagnostic pop
         
         if ([self wasAccessibilityTrusted])
         {
@@ -121,10 +117,10 @@ NSString * const kDistributedAccessibilityChangeNotification = @"com.apple.acces
             
             NSAlert *alert = [[NSAlert alloc] init];
             [alert setAlertStyle:NSCriticalAlertStyle];
-            [alert setMessageText:@"WordCounter needs additional privileges."];
+            [alert setMessageText:@"This app needs additional privileges."];
             [alert addButtonWithTitle:@"Open Accessibility Preferences ..."];
             [alert addButtonWithTitle:@"Quit"];
-            [alert setInformativeText:@"WordCounter needs \"Enable access for assistive devices\" in the Accessibility pane of System Preferences to be turned on. Please start the app again afterwards."];
+            [alert setInformativeText:@"This app needs \"Enable access for assistive devices\" in the Accessibility pane of System Preferences to be turned on. Please start the app again afterwards."];
             
             [NSApp activateIgnoringOtherApps:YES];
             NSInteger attentionrequest = [NSApp requestUserAttention:NSCriticalRequest];
@@ -188,7 +184,5 @@ NSString * const kDistributedAccessibilityChangeNotification = @"com.apple.acces
         self.accessibilityTrusted = trustingNow;
     }
 }
-
-
 
 @end
