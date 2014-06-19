@@ -5,6 +5,24 @@
 //  Created by Christian Tietze on 09.01.14.
 //  Copyright (c) 2014 Christian Tietze. All rights reserved.
 //
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+//
 
 #import "CAXAccessibilityObserver.h"
 #import "CAXAccessibilityPanelController.h"
@@ -18,24 +36,14 @@
 NSString * const kDistributedAccessibilityChangeNotification = @"com.apple.accessibility.api";
 
 @interface CAXAccessibilityObserver ()
-{
-    BOOL _accessibilityTrusted;
-    id _accessibilityChangeObserver;
-}
-
 @property (nonatomic, assign, readwrite, getter = wasAccessibilityTrusted) BOOL accessibilityTrusted;
 @property (nonatomic, strong, readwrite) id accessibilityChangeObserver;
 
 - (void)observeAccessibilityNotifications;
 - (void)accessibiltySettingsDidChange;
-
 @end
 
 @implementation CAXAccessibilityObserver
-
-@synthesize useCustomDialog = _useCustomDialog;
-@synthesize grantedBlock = _grantedBlock;
-@synthesize revokedBlock = _revokedBlock;
 
 + (instancetype)observerWithGrantedBlock:(void (^)(void))grantedBlock revokedBlock:(void (^)(void))revokedBlock
 {
@@ -91,7 +99,13 @@ NSString * const kDistributedAccessibilityChangeNotification = @"com.apple.acces
     }
     else
     {
+        // AXAPIEnabled() is deprecated since 10.9
+        // Suppress the compiler warning because we are certain we want to use
+        // this as a fallback.
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         self.accessibilityTrusted = AXIsProcessTrusted() || AXAPIEnabled();
+#pragma clang diagnostic pop
         
         if ([self wasAccessibilityTrusted])
         {
@@ -103,10 +117,11 @@ NSString * const kDistributedAccessibilityChangeNotification = @"com.apple.acces
             
             NSAlert *alert = [[NSAlert alloc] init];
             [alert setAlertStyle:NSCriticalAlertStyle];
-            [alert setMessageText:@"WordCounter needs additional privileges."];
+
+            [alert setMessageText:@"This app needs additional privileges."];
             [alert addButtonWithTitle:@"Open Accessibility Preferences ..."];
             [alert addButtonWithTitle:@"Quit"];
-            [alert setInformativeText:@"WordCounter needs \"Enable access for assistive devices\" in the Accessibility pane of System Preferences to be turned on. Please start the app again afterwards."];
+            [alert setInformativeText:@"This app needs \"Enable access for assistive devices\" in the Accessibility pane of System Preferences to be turned on. Please start the app again afterwards."];
             
             [NSApp activateIgnoringOtherApps:YES];
             NSInteger attentionrequest = [NSApp requestUserAttention:NSCriticalRequest];
