@@ -33,6 +33,7 @@
 @property (nonatomic, strong, readwrite) CAXAccessibilityPanelController *accessibilityViewController;
 @property (nonatomic, strong, readwrite) NSWindowController *windowController;
 @property (nonatomic, assign, readwrite) BOOL useCustomDialog;
+@property (nonatomic, assign, readonly, getter = wasAccessibilityTrusted) BOOL accessibilityTrusted;
 
 @property (nonatomic, strong, readwrite) void (^grantedBlock)(void);
 @property (nonatomic, strong, readwrite) void (^revokedBlock)(void);
