@@ -29,37 +29,19 @@
 /// For 10.9 Mavericks
 NSString * const kSecurityPreferencePaneName = @"Security.prefPane";
 
-/// For pre 10.9
-NSString * const kUniversalAccessPreferencePaneName = @"UniversalAccessPref.prefpane";
-
 
 @implementation CAXSystemPreferencesUtil
 
 - (void)openAccessibilitySystemPreferences
 {
-    NSURL *systemPreferencePaneURL = nil;
-    
-    if (AXIsProcessTrustedWithOptions != nil)
-    {
-        // On Mavericks; use new path
-        systemPreferencePaneURL = [self URLforSecurityPreferencePane];
-    }
-    else
-    {
-        systemPreferencePaneURL = [self URLforUniversalAccessPreferencePane];
-    }
-    
+    NSURL *systemPreferencePaneURL = [self URLforSecurityPreferencePane];
+
     [[NSWorkspace sharedWorkspace] openURL:systemPreferencePaneURL];
 }
 
 - (NSURL *)URLforSecurityPreferencePane
 {
     return [self URLforPreferencePane:kSecurityPreferencePaneName];
-}
-
-- (NSURL *)URLforUniversalAccessPreferencePane
-{
-    return [self URLforPreferencePane:kUniversalAccessPreferencePaneName];
 }
 
 - (NSURL *)URLforPreferencePane:(NSString *)prefPane

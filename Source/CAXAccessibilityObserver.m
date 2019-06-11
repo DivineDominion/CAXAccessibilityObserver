@@ -71,80 +71,28 @@ NSString * const kDistributedAccessibilityChangeNotification = @"com.apple.acces
 
 - (void)requestPrivileges
 {
-    if (AXIsProcessTrustedWithOptions != NULL)
+    self.accessibilityTrusted = AXIsProcessTrustedWithOptions(NULL);
+
+    if ([self wasAccessibilityTrusted])
     {
-        // We're on Mavericks
-        self.accessibilityTrusted = AXIsProcessTrustedWithOptions(NULL);
-        
-        if ([self wasAccessibilityTrusted])
-        {
-            self.grantedBlock();
-        }
-        else
-        {
-            // TODO extract to Command
-            if ([self useCustomDialog])
-            {
-                [[self.windowController window] makeKeyAndOrderFront:NSApp];
-                [NSApp activateIgnoringOtherApps:YES];
-            }
-            else
-            {
-                NSDictionary *options = @{ (__bridge id)kAXTrustedCheckOptionPrompt: @YES };
-                AXIsProcessTrustedWithOptions((__bridge CFDictionaryRef)options);
-            }
-        }
-        
-        [self observeAccessibilityNotifications];
+        self.grantedBlock();
     }
     else
     {
-        // AXAPIEnabled() is deprecated since 10.9
-        // Suppress the compiler warning because we are certain we want to use
-        // this as a fallback.
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        self.accessibilityTrusted = AXIsProcessTrusted() || AXAPIEnabled();
-#pragma clang diagnostic pop
-        
-        if ([self wasAccessibilityTrusted])
+        // TODO extract to Command
+        if ([self useCustomDialog])
         {
-            self.grantedBlock();
+            [[self.windowController window] makeKeyAndOrderFront:NSApp];
+            [NSApp activateIgnoringOtherApps:YES];
         }
         else
         {
-            // TODO extract to Command
-            
-            NSAlert *alert = [[NSAlert alloc] init];
-            [alert setAlertStyle:NSCriticalAlertStyle];
-
-            [alert setMessageText:@"This app needs additional privileges."];
-            [alert addButtonWithTitle:@"Open Accessibility Preferences ..."];
-            [alert addButtonWithTitle:@"Quit"];
-            [alert setInformativeText:@"This app needs \"Enable access for assistive devices\" in the Accessibility pane of System Preferences to be turned on. Please start the app again afterwards."];
-            
-            [NSApp activateIgnoringOtherApps:YES];
-            NSInteger attentionrequest = [NSApp requestUserAttention:NSCriticalRequest];
-            
-            NSInteger result = [alert runModal];
-            
-            switch (result)
-            {
-                default:
-                    break;
-                case NSAlertFirstButtonReturn:
-                {
-                    CAXSystemPreferencesUtil *prefUtil = [[CAXSystemPreferencesUtil alloc] init];
-                    [prefUtil openAccessibilitySystemPreferences];
-                    break;
-                }
-            }
-            
-            [NSApp cancelUserAttentionRequest:attentionrequest];
-
-            [[NSApplication sharedApplication] terminate:nil];
+            NSDictionary *options = @{ (__bridge id)kAXTrustedCheckOptionPrompt: @YES };
+            AXIsProcessTrustedWithOptions((__bridge CFDictionaryRef)options);
         }
     }
+
+    [self observeAccessibilityNotifications];
 }
 
 - (void)observeAccessibilityNotifications
