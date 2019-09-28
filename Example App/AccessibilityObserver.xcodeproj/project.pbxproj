@@ -166,7 +166,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CAX;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Christian Tietze";
 			};
 			buildConfigurationList = 6037B1BB187F307C00685A7F /* Build configuration list for PBXProject "AccessibilityObserver" */;
@@ -347,6 +347,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AccessibilityObserver/AccessibilityObserver-Prefix.pch";
@@ -361,6 +362,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AccessibilityObserver/AccessibilityObserver-Prefix.pch";
