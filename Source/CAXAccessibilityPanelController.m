@@ -35,7 +35,7 @@
     
     // Necessary action to fix 10.7+ gradient bug in textured window
     //   cf. <http://stackoverflow.com/a/11482772/1460929>
-    if ([[super window] styleMask] & NSTexturedBackgroundWindowMask)
+    if ([[super window] styleMask] & NSWindowStyleMaskTexturedBackground)
     {
         [[super window] setContentBorderThickness:0 forEdge:NSMaxYEdge]; // top border
         [[super window] setContentBorderThickness:0 forEdge:NSMinYEdge]; // bottom border
